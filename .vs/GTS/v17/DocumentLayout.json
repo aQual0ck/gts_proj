@@ -1,29 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\Csharp\\GTS\\",
+  "WorkspaceRootPath": "F:\\source\\gts_proj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageadminats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageadminats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\pages\\pagelogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pagelogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\auxclasses\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:auxclasses\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\auxclasses\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\auxclasses\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:auxclasses\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|d:\\projects\\csharp\\gts\\auxclasses\\frameclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\pages\\pagelogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\auxclasses\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:auxclasses\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\auxclasses\\frameclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:auxclasses\\frameclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,15 +50,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "PageLogin.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageLogin.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageLogin.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageLogin.xaml.cs",
+              "RelativeToolTip": "Pages\\PageLogin.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAuwCQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T17:44:29.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PageATS.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageATS.xaml",
+              "RelativeDocumentMoniker": "Pages\\PageATS.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageATS.xaml",
+              "RelativeToolTip": "Pages\\PageATS.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T17:43:33.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PageAdminATS.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml",
+              "RelativeDocumentMoniker": "Pages\\PageAdminATS.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml",
+              "RelativeToolTip": "Pages\\PageAdminATS.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-24T17:43:10.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.config",
+              "DocumentMoniker": "F:\\source\\gts_proj\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "F:\\source\\gts_proj\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAADlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-24T17:41:05.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PageLogin.xaml",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\Pages\\PageLogin.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageLogin.xaml",
               "RelativeDocumentMoniker": "Pages\\PageLogin.xaml",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\Pages\\PageLogin.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageLogin.xaml",
               "RelativeToolTip": "Pages\\PageLogin.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-22T07:43:49.803Z",
@@ -50,11 +116,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\Model1.edmx",
+              "DocumentMoniker": "F:\\source\\gts_proj\\AuxClasses\\Model1.edmx",
               "RelativeDocumentMoniker": "AuxClasses\\Model1.edmx",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\Model1.edmx [Diagram1]",
+              "ToolTip": "F:\\source\\gts_proj\\AuxClasses\\Model1.edmx [Diagram1]",
               "RelativeToolTip": "AuxClasses\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2024-10-22T07:34:09.531Z",
@@ -62,11 +128,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DBClass.cs",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\DBClass.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\AuxClasses\\DBClass.cs",
               "RelativeDocumentMoniker": "AuxClasses\\DBClass.cs",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\DBClass.cs",
+              "ToolTip": "F:\\source\\gts_proj\\AuxClasses\\DBClass.cs",
               "RelativeToolTip": "AuxClasses\\DBClass.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -75,24 +141,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "FrameClass.cs",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\FrameClass.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\AuxClasses\\FrameClass.cs",
               "RelativeDocumentMoniker": "AuxClasses\\FrameClass.cs",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\AuxClasses\\FrameClass.cs",
+              "ToolTip": "F:\\source\\gts_proj\\AuxClasses\\FrameClass.cs",
               "RelativeToolTip": "AuxClasses\\FrameClass.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T07:24:00.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T07:24:00.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\MainWindow.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\MainWindow.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-22T07:03:47.536Z",
@@ -100,16 +165,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\Csharp\\GTS\\MainWindow.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Projects\\Csharp\\GTS\\MainWindow.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T07:03:45.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T07:03:45.229Z"
             }
           ]
         }

@@ -9,6 +9,15 @@
       Title="PageLogin">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Логин"/>
+            <TextBox Width="100" Name="txbLogin" Margin="5"/>
+            <TextBlock Text="Пароль"/>
+            <TextBox Width="100" Name="txbPassword" Margin="5"/>
+            <Button Content="Ввод" Width="100" Height="30" Margin="5" Name="btnConfirm" 
+                    Click="btnConfirm_Click"/>
+            <TextBlock Name="tbWarning" Text="Логин или пароль неверны" Visibility="Hidden"/>
+            <TextBlock Name="tbNoText" Text="Введите логин и пароль" Visibility="Hidden"/>
+        </StackPanel>
     </Grid>
 </Page>
