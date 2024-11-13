@@ -1,26 +1,220 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="gtsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="gtsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ate" EntityType="gtsModel.ate" />
+    <EntitySet Name="ate_type" EntityType="gtsModel.ate_type" />
+    <EntitySet Name="category" EntityType="gtsModel.category" />
+    <EntitySet Name="customer" EntityType="gtsModel.customer" />
+    <EntitySet Name="phone_number" EntityType="gtsModel.phone_number" />
+    <EntitySet Name="phone_type" EntityType="gtsModel.phone_type" />
+    <EntitySet Name="role" EntityType="gtsModel.role" />
+    <EntitySet Name="sysdiagrams" EntityType="gtsModel.sysdiagrams" />
+    <EntitySet Name="users" EntityType="gtsModel.users" />
+    <AssociationSet Name="FK__ate__ate_type_id__70DDC3D8" Association="gtsModel.FK__ate__ate_type_id__70DDC3D8">
+      <End Role="ate_type" EntitySet="ate_type" />
+      <End Role="ate" EntitySet="ate" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customer__ate_id__787EE5A0" Association="gtsModel.FK__customer__ate_id__787EE5A0">
+      <End Role="ate" EntitySet="ate" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phone_num__ate_i__7D439ABD" Association="gtsModel.FK__phone_num__ate_i__7D439ABD">
+      <End Role="ate" EntitySet="ate" />
+      <End Role="phone_number" EntitySet="phone_number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customer__catego__797309D9" Association="gtsModel.FK__customer__catego__797309D9">
+      <End Role="category" EntitySet="category" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customer__phone___778AC167" Association="gtsModel.FK__customer__phone___778AC167">
+      <End Role="phone_type" EntitySet="phone_type" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phone_num__phone__7C4F7684" Association="gtsModel.FK__phone_num__phone__7C4F7684">
+      <End Role="phone_type" EntitySet="phone_type" />
+      <End Role="phone_number" EntitySet="phone_number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__role_id__398D8EEE" Association="gtsModel.FK__users__role_id__398D8EEE">
+      <End Role="role" EntitySet="role" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="phone_number_customer" Association="gtsModel.phone_number_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="phone_number" EntitySet="phone_number" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ate_type_id" Type="Int32" Nullable="false" />
+    <Property Name="number_of_customers" Type="Int32" />
+    <Property Name="phone_number_qty" Type="Int32" />
+    <NavigationProperty Name="ate_type" Relationship="gtsModel.FK__ate__ate_type_id__70DDC3D8" FromRole="ate" ToRole="ate_type" />
+    <NavigationProperty Name="customer" Relationship="gtsModel.FK__customer__ate_id__787EE5A0" FromRole="ate" ToRole="customer" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__ate_i__7D439ABD" FromRole="ate" ToRole="phone_number" />
+  </EntityType>
+  <EntityType Name="ate_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ate_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ate" Relationship="gtsModel.FK__ate__ate_type_id__70DDC3D8" FromRole="ate_type" ToRole="ate" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="customer" Relationship="gtsModel.FK__customer__catego__797309D9" FromRole="category" ToRole="customer" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="phone_type_id" Type="Int32" />
+    <Property Name="ate_id" Type="Int32" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="has_debt" Type="Boolean" />
+    <Property Name="has_intercity" Type="Boolean" />
+    <Property Name="phone_number_id" Type="Int32" />
+    <NavigationProperty Name="ate" Relationship="gtsModel.FK__customer__ate_id__787EE5A0" FromRole="customer" ToRole="ate" />
+    <NavigationProperty Name="category" Relationship="gtsModel.FK__customer__catego__797309D9" FromRole="customer" ToRole="category" />
+    <NavigationProperty Name="phone_type" Relationship="gtsModel.FK__customer__phone___778AC167" FromRole="customer" ToRole="phone_type" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.phone_number_customer" FromRole="customer" ToRole="phone_number" />
+  </EntityType>
+  <EntityType Name="phone_number">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone_type_id" Type="Int32" />
+    <Property Name="ate_id" Type="Int32" />
+    <Property Name="customer_id" Type="Int32" />
+    <NavigationProperty Name="ate" Relationship="gtsModel.FK__phone_num__ate_i__7D439ABD" FromRole="phone_number" ToRole="ate" />
+    <NavigationProperty Name="phone_type" Relationship="gtsModel.FK__phone_num__phone__7C4F7684" FromRole="phone_number" ToRole="phone_type" />
+    <NavigationProperty Name="customer" Relationship="gtsModel.phone_number_customer" FromRole="phone_number" ToRole="customer" />
+  </EntityType>
+  <EntityType Name="phone_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="phone_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="customer" Relationship="gtsModel.FK__customer__phone___778AC167" FromRole="phone_type" ToRole="customer" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__phone__7C4F7684" FromRole="phone_type" ToRole="phone_number" />
+  </EntityType>
   <EntityType Name="role">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="users" Relationship="Self.FK__users__role_id__267ABA7A" FromRole="role" ToRole="users" />
+    <Property Name="role_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="gtsModel.FK__users__role_id__398D8EEE" FromRole="role" ToRole="users" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="users">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
     <Property Name="role_id" Type="Int32" />
-    <NavigationProperty Name="role" Relationship="Self.FK__users__role_id__267ABA7A" FromRole="users" ToRole="role" />
+    <NavigationProperty Name="role" Relationship="gtsModel.FK__users__role_id__398D8EEE" FromRole="users" ToRole="role" />
   </EntityType>
-  <Association Name="FK__users__role_id__267ABA7A">
-    <End Role="role" Type="Self.role" Multiplicity="0..1" />
-    <End Role="users" Type="Self.users" Multiplicity="*" />
+  <Association Name="FK__ate__ate_type_id__70DDC3D8">
+    <End Type="gtsModel.ate_type" Role="ate_type" Multiplicity="1" />
+    <End Type="gtsModel.ate" Role="ate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ate_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ate">
+        <PropertyRef Name="ate_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customer__ate_id__787EE5A0">
+    <End Type="gtsModel.ate" Role="ate" Multiplicity="0..1" />
+    <End Type="gtsModel.customer" Role="customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ate">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="ate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phone_num__ate_i__7D439ABD">
+    <End Type="gtsModel.ate" Role="ate" Multiplicity="0..1" />
+    <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ate">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="phone_number">
+        <PropertyRef Name="ate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customer__catego__797309D9">
+    <End Type="gtsModel.category" Role="category" Multiplicity="0..1" />
+    <End Type="gtsModel.customer" Role="customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customer__phone___778AC167">
+    <End Type="gtsModel.phone_type" Role="phone_type" Multiplicity="0..1" />
+    <End Type="gtsModel.customer" Role="customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phone_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="phone_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phone_num__phone__7C4F7684">
+    <End Type="gtsModel.phone_type" Role="phone_type" Multiplicity="0..1" />
+    <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phone_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="phone_number">
+        <PropertyRef Name="phone_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__role_id__398D8EEE">
+    <End Type="gtsModel.role" Role="role" Multiplicity="0..1" />
+    <End Type="gtsModel.users" Role="users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="role">
         <PropertyRef Name="id" />
@@ -30,12 +224,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="gtsEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="role" EntityType="Self.role" />
-    <EntitySet Name="users" EntityType="Self.users" />
-    <AssociationSet Name="FK__users__role_id__267ABA7A" Association="Self.FK__users__role_id__267ABA7A">
-      <End Role="role" EntitySet="role" />
-      <End Role="users" EntitySet="users" />
-    </AssociationSet>
-  </EntityContainer>
+  <Association Name="phone_number_customer">
+    <End Type="gtsModel.customer" Role="customer" Multiplicity="*" />
+    <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
+  </Association>
 </Schema>

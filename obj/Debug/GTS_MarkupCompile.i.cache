@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Projects\Csharp\GTS\obj\Debug\
+F:\source\gts_proj\obj\Debug\
 GTS
 none
 false
 DEBUG;TRACE
-D:\Projects\Csharp\GTS\App.xaml
-4987760726
-2259290095
-23-1988035190
-18-998025044
-MainWindow.xaml;Pages\PageAdminATS.xaml;Pages\PageATS.xaml;Pages\PageLogin.xaml;
+F:\source\gts_proj\App.xaml
+61185493730
+2-107778721
+251441726588
+181757046653
+MainWindow.xaml;Pages\PageAddATS.xaml;Pages\PageAdminATS.xaml;Pages\PageAdminList.xaml;Pages\PageATS.xaml;Pages\PageLogin.xaml;
 
 True
 

@@ -120,7 +120,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageAddATS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageAdminATS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAdminList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,8 +142,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\PageAddATS.xaml.cs">
+      <DependentUpon>PageAddATS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageAdminATS.xaml.cs">
       <DependentUpon>PageAdminATS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAdminList.xaml.cs">
+      <DependentUpon>PageAdminList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageATS.xaml.cs">
       <DependentUpon>PageATS.xaml</DependentUpon>

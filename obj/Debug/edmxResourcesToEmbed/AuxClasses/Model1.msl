@@ -1,23 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище gtsModelContainer" CdmEntityContainer="gtsEntities">
+    <EntitySetMapping Name="ate">
+      <EntityTypeMapping TypeName="gtsModel.ate">
+        <MappingFragment StoreEntitySet="ate">
+          <ScalarProperty Name="phone_number_qty" ColumnName="phone_number_qty" />
+          <ScalarProperty Name="number_of_customers" ColumnName="number_of_customers" />
+          <ScalarProperty Name="ate_type_id" ColumnName="ate_type_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ate_type">
+      <EntityTypeMapping TypeName="gtsModel.ate_type">
+        <MappingFragment StoreEntitySet="ate_type">
+          <ScalarProperty Name="ate_type_name" ColumnName="ate_type_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="gtsModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="gtsModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="phone_number_id" ColumnName="phone_number_id" />
+          <ScalarProperty Name="has_intercity" ColumnName="has_intercity" />
+          <ScalarProperty Name="has_debt" ColumnName="has_debt" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="ate_id" ColumnName="ate_id" />
+          <ScalarProperty Name="phone_type_id" ColumnName="phone_type_id" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phone_number">
+      <EntityTypeMapping TypeName="gtsModel.phone_number">
+        <MappingFragment StoreEntitySet="phone_number">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="ate_id" ColumnName="ate_id" />
+          <ScalarProperty Name="phone_type_id" ColumnName="phone_type_id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phone_type">
+      <EntityTypeMapping TypeName="gtsModel.phone_type">
+        <MappingFragment StoreEntitySet="phone_type">
+          <ScalarProperty Name="phone_type_name" ColumnName="phone_type_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="role">
       <EntityTypeMapping TypeName="gtsModel.role">
         <MappingFragment StoreEntitySet="role">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="gtsModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="users">
       <EntityTypeMapping TypeName="gtsModel.users">
         <MappingFragment StoreEntitySet="users">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="phone_number_customer" TypeName="gtsModel.phone_number_customer" StoreEntitySet="phone_number_customer">
+      <EndProperty Name="phone_number">
+        <ScalarProperty Name="id" ColumnName="phone_number_id" />
+      </EndProperty>
+      <EndProperty Name="customer">
+        <ScalarProperty Name="id" ColumnName="customer_id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

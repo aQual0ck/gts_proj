@@ -31,12 +31,12 @@ namespace GTS.Pages
         {
             try
             {
-                if (txbLogin.Text != "" && txbPassword.Text != "" && txbLogin.Text != "Введите логин" && txbPassword.Text != "Введите пароль")
+                if (txbLogin.Text != "" && txbPassword.Text != "")
                 {
                     var userObj = AuxClasses.DBClass.entObj.users.FirstOrDefault(x => x.username == txbLogin.Text && x.password == txbPassword.Text);
                     if (userObj == null)
                     {
-                        tbWarning.Dispatcher.Invoke(() => tbWarning.Visibility = Visibility.Visible);
+                        tbWarning.Visibility = Visibility.Visible;
                     }
                     else if (userObj.role_id == 1)
                     {
@@ -49,13 +49,13 @@ namespace GTS.Pages
                 }
                 else
                 {
-                    tbNoText.Dispatcher.Invoke(() => tbNoText.Visibility = Visibility.Visible);
+                    tbNoText.Visibility = Visibility.Visible;
                     var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
                     timer.Start();
                     timer.Tick += (sender1, args) =>
                     {
                         timer.Stop();
-                        tbNoText.Dispatcher.Invoke(() => tbNoText.Visibility = Visibility.Hidden);
+                        tbNoText.Visibility = Visibility.Visible;
                     };
                 }
             }

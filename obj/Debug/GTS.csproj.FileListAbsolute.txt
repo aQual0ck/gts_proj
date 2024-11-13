@@ -54,3 +54,8 @@ D:\Projects\Csharp\GTS\obj\Debug\GTS.csproj.CoreCompileInputs.cache
 D:\Projects\Csharp\GTS\obj\Debug\GTS.csproj.CopyComplete
 D:\Projects\Csharp\GTS\obj\Debug\GTS.exe
 D:\Projects\Csharp\GTS\obj\Debug\GTS.pdb
+F:\source\gts_proj\obj\Debug\Pages\PageAddATS.g.cs
+F:\source\gts_proj\obj\Debug\Pages\PageAdminList.g.cs
+F:\source\gts_proj\obj\Debug\Pages\PageAddATS.baml
+F:\source\gts_proj\obj\Debug\Pages\PageAdminList.baml
+F:\source\gts_proj\obj\Debug\App.baml
