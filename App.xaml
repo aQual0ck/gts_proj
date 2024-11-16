@@ -4,11 +4,39 @@
              xmlns:local="clr-namespace:GTS"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Button" x:Key="btnLogin">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0, 30, 0, 0"/>
+            <Setter Property="Background" Value="#66BBFF"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="btnSave">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#66BBFF"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
         <Style TargetType="Button" x:Key="btnOptionsEdit">
             <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#E1D5E7"/>
         </Style>
+            
         <Style TargetType="Button" x:Key="btnOptionsDelete">
             <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#F8CECC"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="btnOptionsSub">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#66BBFF"/>
         </Style>
     </Application.Resources>
 </Application>

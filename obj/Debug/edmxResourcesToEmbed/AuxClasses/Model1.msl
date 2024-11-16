@@ -50,7 +50,17 @@
           <ScalarProperty Name="ate_id" ColumnName="ate_id" />
           <ScalarProperty Name="phone_type_id" ColumnName="phone_type_id" />
           <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="full_number" ColumnName="full_number" />
           <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phone_number_customer">
+      <EntityTypeMapping TypeName="gtsModel.phone_number_customer">
+        <MappingFragment StoreEntitySet="phone_number_customer">
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="phone_number_id" ColumnName="phone_number_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,13 +101,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="phone_number_customer" TypeName="gtsModel.phone_number_customer" StoreEntitySet="phone_number_customer">
-      <EndProperty Name="phone_number">
-        <ScalarProperty Name="id" ColumnName="phone_number_id" />
-      </EndProperty>
-      <EndProperty Name="customer">
-        <ScalarProperty Name="id" ColumnName="customer_id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

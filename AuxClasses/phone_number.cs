@@ -17,10 +17,11 @@ namespace GTS.AuxClasses
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public phone_number()
         {
-            this.customer = new HashSet<customer>();
+            this.phone_number_customer = new HashSet<phone_number_customer>();
         }
     
         public int id { get; set; }
+        public string full_number { get; set; }
         public string address { get; set; }
         public Nullable<int> phone_type_id { get; set; }
         public Nullable<int> ate_id { get; set; }
@@ -29,6 +30,6 @@ namespace GTS.AuxClasses
         public virtual ate ate { get; set; }
         public virtual phone_type phone_type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<customer> customer { get; set; }
+        public virtual ICollection<phone_number_customer> phone_number_customer { get; set; }
     }
 }

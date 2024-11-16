@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GTS.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAdminATS">
+      Title="PageAdminATS" Background="#F6F6F6">
 
     <Grid>
         <Grid.RowDefinitions>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GTS.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAddATS">
+      Title="PageAddATS" Background="#F6F6F6">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,6 +16,8 @@
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="Назад" Click="MenuItem_Click"/>
         </Menu>
+        <Rectangle Width="350" Height="150" Fill="White" Stroke="#666666" 
+                   Grid.Row="1"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
                     Grid.Row="1">
             <StackPanel Orientation="Horizontal">
@@ -31,7 +33,13 @@
                 <TextBox Name="txbPhoneNumbers" Width="150" Margin="5, 5, 0, 5"/>
             </StackPanel>
             <Button Name="btnSave" Content="Сохранить" Click="btnSave_Click" 
-                    Width="80" Height="30"/>
+                    Style="{StaticResource btnSave}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

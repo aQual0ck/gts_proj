@@ -1,0 +1,103 @@
+﻿<Page x:Class="GTS.Pages.PageList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GTS.Pages"
+      xmlns:classes="clr-namespace:GTS.AuxClasses"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageList" Background="#F6F6F6">
+    <Page.Resources>
+        <classes:BoolConverter x:Key="BoolConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Center">
+            <MenuItem Name="menuAdd" Header="Добавить абонента" Click="menuAdd_Click"/>
+            <MenuItem Header="Телефоны">
+                <MenuItem Name="menuPhone" Header="Телефоны" Click="menuPhone_Click"/>
+                <MenuItem Name="menuGeneral" Header="Общее" Click="menuGeneral_Click"/>
+            </MenuItem>
+            <MenuItem Name="menuBack" Header="Выбор АТС" Click="menuBack_Click"/>
+            <MenuItem Name="menuExit" Header="Выйти" Click="menuExit_Click"/>
+        </Menu>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBox Width="200" Height="25" Margin="5" Name="txbSearch" 
+                     TextChanged="txbSearch_TextChanged"/>
+            <ComboBox Name="cmbFilterPT" Width="150" Height="25" 
+                      SelectionChanged="cmbFilterPT_SelectionChanged"/>
+            <ComboBox Name="cmbFilterCat" Width="150" Height="25" Margin="5"
+                      SelectionChanged="cmbFilterCat_SelectionChanged"/>
+            <StackPanel Margin="0, 2.5, 0, 0">
+                <CheckBox Content="Только должники" VerticalAlignment="Center"
+                          Name="cbDebt" Checked="cbDebt_Checked" 
+                          Unchecked="cbDebt_Unchecked"/>
+                <CheckBox Content="Только с межгородом" VerticalAlignment="Center"
+                          Name="cbIntercity" Checked="cbIntercity_Checked"
+                          Unchecked="cbIntercity_Unchecked"/>
+                <CheckBox Content="Только без долгов и межгорода" 
+                          VerticalAlignment="Center" Name="cbDI" 
+                          Checked="cbDI_Checked" Unchecked="cbDI_Unchecked"/>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Name="dgrCustomer" Grid.Row="2" AutoGenerateColumns="False" 
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="*"/>
+                <DataGridTextColumn Header="Пол" Binding="{Binding gender}" Width="*"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding age}" Width="*"/>
+                <DataGridTemplateColumn Header="Тип телефона" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock DataContext="{Binding Path=phone_type}">
+                                <TextBlock.Text>
+                                    <Binding Path="phone_type_name"/>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Категория" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock DataContext="{Binding Path=category}">
+                                <TextBlock.Text>
+                                    <Binding Path="category_name"/>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Долг" 
+                                    Binding="{Binding has_debt, Converter={StaticResource BoolConverter}}" 
+                                    Width="*"/>
+                <DataGridTextColumn Header="Межгород" 
+                                    Binding="{Binding has_intercity, Converter={StaticResource BoolConverter}}"
+                                    Width="*"/>
+                <DataGridTemplateColumn Header="Опции" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center">
+                                <Button Name="btnEdit" Content="Редактировать" 
+                                        Click="btnEdit_Click"
+                                        Style="{StaticResource btnOptionsEdit}"/>
+                                <Button Name="btnDelete" Content="Удалить" 
+                                        Click="btnDelete_Click"
+                                        Style="{StaticResource btnOptionsDelete}"/>
+                                <Button Name="btnViewNumbers" Content="Номера" 
+                                        Click="btnViewNumbers_Click"
+                                        Style="{StaticResource btnOptionsSub}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

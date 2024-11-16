@@ -5,23 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="68684f34ddfa4b40a4eb6ebaf884f1d8" Name="Diagram1" ZoomLevel="97">
-        <EntityTypeShape EntityType="gtsModel.ate" Width="1.5" PointX="0.75" PointY="7.5" />
-        <EntityTypeShape EntityType="gtsModel.ate_type" Width="1.5" PointX="1.5" PointY="11" />
-        <EntityTypeShape EntityType="gtsModel.category" Width="1.5" PointX="0.75" PointY="5.25" />
-        <EntityTypeShape EntityType="gtsModel.customer" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="gtsModel.phone_number" Width="1.5" PointX="5.25" PointY="1.625" />
-        <EntityTypeShape EntityType="gtsModel.phone_type" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="gtsModel.role" Width="1.5" PointX="2.75" PointY="6.125" />
-        <EntityTypeShape EntityType="gtsModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="gtsModel.users" Width="1.5" PointX="5" PointY="5.875" />
+        <EntityTypeShape EntityType="gtsModel.ate" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="gtsModel.ate_type" Width="1.5" PointX="1.5" PointY="8.125" />
+        <EntityTypeShape EntityType="gtsModel.category" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="gtsModel.customer" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="gtsModel.phone_number" Width="1.5" PointX="6" PointY="3.75" />
+        <EntityTypeShape EntityType="gtsModel.phone_number_customer" Width="1.5" PointX="8.25" PointY="4.125" />
+        <EntityTypeShape EntityType="gtsModel.phone_type" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="gtsModel.role" Width="1.5" PointX="3.75" PointY="8.375" />
+        <EntityTypeShape EntityType="gtsModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="1.125" />
+        <EntityTypeShape EntityType="gtsModel.users" Width="1.5" PointX="6" PointY="8.25" />
         <AssociationConnector Association="gtsModel.FK__ate__ate_type_id__70DDC3D8" />
         <AssociationConnector Association="gtsModel.FK__customer__ate_id__787EE5A0" />
-        <AssociationConnector Association="gtsModel.FK__phone_num__ate_i__7D439ABD" />
+        <AssociationConnector Association="gtsModel.FK__phone_num__ate_i__18EBB532" />
         <AssociationConnector Association="gtsModel.FK__customer__catego__797309D9" />
         <AssociationConnector Association="gtsModel.FK__customer__phone___778AC167" />
-        <AssociationConnector Association="gtsModel.FK__phone_num__phone__7C4F7684" />
+        <AssociationConnector Association="gtsModel.FK__phone_num__custo__2180FB33" />
+        <AssociationConnector Association="gtsModel.FK__phone_num__phone__17F790F9" />
+        <AssociationConnector Association="gtsModel.FK__phone_num__phone__208CD6FA" />
         <AssociationConnector Association="gtsModel.FK__users__role_id__398D8EEE" />
-        <AssociationConnector Association="gtsModel.phone_number_customer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

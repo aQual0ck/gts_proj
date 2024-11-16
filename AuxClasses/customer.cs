@@ -17,7 +17,7 @@ namespace GTS.AuxClasses
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public customer()
         {
-            this.phone_number = new HashSet<phone_number>();
+            this.phone_number_customer = new HashSet<phone_number_customer>();
         }
     
         public int id { get; set; }
@@ -35,6 +35,6 @@ namespace GTS.AuxClasses
         public virtual category category { get; set; }
         public virtual phone_type phone_type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<phone_number> phone_number { get; set; }
+        public virtual ICollection<phone_number_customer> phone_number_customer { get; set; }
     }
 }

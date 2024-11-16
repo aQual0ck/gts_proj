@@ -31,9 +31,9 @@ namespace GTS.Pages
         {
             try
             {
-                if (txbLogin.Text != "" && txbPassword.Text != "")
+                if (txbLogin.Text != "" && psbPassword.Password != "")
                 {
-                    var userObj = AuxClasses.DBClass.entObj.users.FirstOrDefault(x => x.username == txbLogin.Text && x.password == txbPassword.Text);
+                    var userObj = AuxClasses.DBClass.entObj.users.FirstOrDefault(x => x.username == txbLogin.Text && x.password == psbPassword.Password);
                     if (userObj == null)
                     {
                         tbWarning.Visibility = Visibility.Visible;

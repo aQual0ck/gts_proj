@@ -25,14 +25,17 @@ namespace GTS.Pages
         {
             InitializeComponent();
             DataContext = AuxClasses.DBClass.entObj;
-            for(int i = 1; i <= AuxClasses.DBClass.entObj.ate.Count(); i++)
+            var converter = new BrushConverter();
+            for (int i = 1; i <= AuxClasses.DBClass.entObj.ate.Count(); i++)
             {
                 Button newBtn = new Button
                 {
                     Content = "АТС" + i.ToString(),
                     Name = "ats_" + i.ToString(),
                     Height = 60,
-                    Width = 120
+                    Width = 120,
+                    Foreground = Brushes.White,
+                    Background = (Brush)converter.ConvertFrom("#66BBFF"),
                 };
                 newBtn.Click += newBtn_Click;
                 buttonWP.Children.Add(newBtn);
@@ -43,6 +46,8 @@ namespace GTS.Pages
                 Name = "addAte",
                 Height = 60,
                 Width = 120,
+                Foreground = Brushes.White,
+                Background = (Brush)converter.ConvertFrom("#66BBFF"),
             };
             addAte.Click += addAte_Click;
             buttonWP.Children.Add(addAte);

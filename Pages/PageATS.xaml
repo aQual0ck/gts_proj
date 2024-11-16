@@ -6,9 +6,20 @@
       xmlns:local="clr-namespace:GTS.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageATS">
+      Title="PageATS" Background="#F6F6F6">
 
     <Grid>
-        <TextBlock Text="not admin"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="430"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Center">
+            <MenuItem Header="Выход" Click="MenuItem_Click"/>
+        </Menu>
+        <ScrollViewer CanContentScroll="True" Height="390" Grid.Row="1" 
+                      VerticalAlignment="Top">
+            <WrapPanel Name="buttonWP" VerticalAlignment="Top" 
+                       HorizontalAlignment="Left" Orientation="Horizontal"/>
+        </ScrollViewer>
     </Grid>
 </Page>

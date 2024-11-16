@@ -6,6 +6,7 @@
     <EntitySet Name="category" EntityType="gtsModel.category" />
     <EntitySet Name="customer" EntityType="gtsModel.customer" />
     <EntitySet Name="phone_number" EntityType="gtsModel.phone_number" />
+    <EntitySet Name="phone_number_customer" EntityType="gtsModel.phone_number_customer" />
     <EntitySet Name="phone_type" EntityType="gtsModel.phone_type" />
     <EntitySet Name="role" EntityType="gtsModel.role" />
     <EntitySet Name="sysdiagrams" EntityType="gtsModel.sysdiagrams" />
@@ -18,7 +19,7 @@
       <End Role="ate" EntitySet="ate" />
       <End Role="customer" EntitySet="customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__phone_num__ate_i__7D439ABD" Association="gtsModel.FK__phone_num__ate_i__7D439ABD">
+    <AssociationSet Name="FK__phone_num__ate_i__18EBB532" Association="gtsModel.FK__phone_num__ate_i__18EBB532">
       <End Role="ate" EntitySet="ate" />
       <End Role="phone_number" EntitySet="phone_number" />
     </AssociationSet>
@@ -30,17 +31,21 @@
       <End Role="phone_type" EntitySet="phone_type" />
       <End Role="customer" EntitySet="customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__phone_num__phone__7C4F7684" Association="gtsModel.FK__phone_num__phone__7C4F7684">
+    <AssociationSet Name="FK__phone_num__custo__2180FB33" Association="gtsModel.FK__phone_num__custo__2180FB33">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="phone_number_customer" EntitySet="phone_number_customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phone_num__phone__17F790F9" Association="gtsModel.FK__phone_num__phone__17F790F9">
       <End Role="phone_type" EntitySet="phone_type" />
       <End Role="phone_number" EntitySet="phone_number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phone_num__phone__208CD6FA" Association="gtsModel.FK__phone_num__phone__208CD6FA">
+      <End Role="phone_number" EntitySet="phone_number" />
+      <End Role="phone_number_customer" EntitySet="phone_number_customer" />
     </AssociationSet>
     <AssociationSet Name="FK__users__role_id__398D8EEE" Association="gtsModel.FK__users__role_id__398D8EEE">
       <End Role="role" EntitySet="role" />
       <End Role="users" EntitySet="users" />
-    </AssociationSet>
-    <AssociationSet Name="phone_number_customer" Association="gtsModel.phone_number_customer">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="phone_number" EntitySet="phone_number" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ate">
@@ -53,7 +58,7 @@
     <Property Name="phone_number_qty" Type="Int32" />
     <NavigationProperty Name="ate_type" Relationship="gtsModel.FK__ate__ate_type_id__70DDC3D8" FromRole="ate" ToRole="ate_type" />
     <NavigationProperty Name="customer" Relationship="gtsModel.FK__customer__ate_id__787EE5A0" FromRole="ate" ToRole="customer" />
-    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__ate_i__7D439ABD" FromRole="ate" ToRole="phone_number" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__ate_i__18EBB532" FromRole="ate" ToRole="phone_number" />
   </EntityType>
   <EntityType Name="ate_type">
     <Key>
@@ -88,20 +93,32 @@
     <NavigationProperty Name="ate" Relationship="gtsModel.FK__customer__ate_id__787EE5A0" FromRole="customer" ToRole="ate" />
     <NavigationProperty Name="category" Relationship="gtsModel.FK__customer__catego__797309D9" FromRole="customer" ToRole="category" />
     <NavigationProperty Name="phone_type" Relationship="gtsModel.FK__customer__phone___778AC167" FromRole="customer" ToRole="phone_type" />
-    <NavigationProperty Name="phone_number" Relationship="gtsModel.phone_number_customer" FromRole="customer" ToRole="phone_number" />
+    <NavigationProperty Name="phone_number_customer" Relationship="gtsModel.FK__phone_num__custo__2180FB33" FromRole="customer" ToRole="phone_number_customer" />
   </EntityType>
   <EntityType Name="phone_number">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="full_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="phone_type_id" Type="Int32" />
     <Property Name="ate_id" Type="Int32" />
     <Property Name="customer_id" Type="Int32" />
-    <NavigationProperty Name="ate" Relationship="gtsModel.FK__phone_num__ate_i__7D439ABD" FromRole="phone_number" ToRole="ate" />
-    <NavigationProperty Name="phone_type" Relationship="gtsModel.FK__phone_num__phone__7C4F7684" FromRole="phone_number" ToRole="phone_type" />
-    <NavigationProperty Name="customer" Relationship="gtsModel.phone_number_customer" FromRole="phone_number" ToRole="customer" />
+    <NavigationProperty Name="ate" Relationship="gtsModel.FK__phone_num__ate_i__18EBB532" FromRole="phone_number" ToRole="ate" />
+    <NavigationProperty Name="phone_type" Relationship="gtsModel.FK__phone_num__phone__17F790F9" FromRole="phone_number" ToRole="phone_type" />
+    <NavigationProperty Name="phone_number_customer" Relationship="gtsModel.FK__phone_num__phone__208CD6FA" FromRole="phone_number" ToRole="phone_number_customer" />
+  </EntityType>
+  <EntityType Name="phone_number_customer">
+    <Key>
+      <PropertyRef Name="phone_number_id" />
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="phone_number_id" Type="Int32" Nullable="false" />
+    <Property Name="customer_id" Type="Int32" Nullable="false" />
+    <Property Name="fee" Type="Int32" />
+    <NavigationProperty Name="customer" Relationship="gtsModel.FK__phone_num__custo__2180FB33" FromRole="phone_number_customer" ToRole="customer" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__phone__208CD6FA" FromRole="phone_number_customer" ToRole="phone_number" />
   </EntityType>
   <EntityType Name="phone_type">
     <Key>
@@ -110,7 +127,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="phone_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="customer" Relationship="gtsModel.FK__customer__phone___778AC167" FromRole="phone_type" ToRole="customer" />
-    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__phone__7C4F7684" FromRole="phone_type" ToRole="phone_number" />
+    <NavigationProperty Name="phone_number" Relationship="gtsModel.FK__phone_num__phone__17F790F9" FromRole="phone_type" ToRole="phone_number" />
   </EntityType>
   <EntityType Name="role">
     <Key>
@@ -164,7 +181,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phone_num__ate_i__7D439ABD">
+  <Association Name="FK__phone_num__ate_i__18EBB532">
     <End Type="gtsModel.ate" Role="ate" Multiplicity="0..1" />
     <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
     <ReferentialConstraint>
@@ -200,7 +217,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phone_num__phone__7C4F7684">
+  <Association Name="FK__phone_num__custo__2180FB33">
+    <End Type="gtsModel.customer" Role="customer" Multiplicity="1" />
+    <End Type="gtsModel.phone_number_customer" Role="phone_number_customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="phone_number_customer">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phone_num__phone__17F790F9">
     <End Type="gtsModel.phone_type" Role="phone_type" Multiplicity="0..1" />
     <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
     <ReferentialConstraint>
@@ -209,6 +238,18 @@
       </Principal>
       <Dependent Role="phone_number">
         <PropertyRef Name="phone_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phone_num__phone__208CD6FA">
+    <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="1" />
+    <End Type="gtsModel.phone_number_customer" Role="phone_number_customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phone_number">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="phone_number_customer">
+        <PropertyRef Name="phone_number_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -223,9 +264,5 @@
         <PropertyRef Name="role_id" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <Association Name="phone_number_customer">
-    <End Type="gtsModel.customer" Role="customer" Multiplicity="*" />
-    <End Type="gtsModel.phone_number" Role="phone_number" Multiplicity="*" />
   </Association>
 </Schema>

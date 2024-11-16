@@ -30,6 +30,7 @@ namespace GTS.AuxClasses
         public virtual DbSet<category> category { get; set; }
         public virtual DbSet<customer> customer { get; set; }
         public virtual DbSet<phone_number> phone_number { get; set; }
+        public virtual DbSet<phone_number_customer> phone_number_customer { get; set; }
         public virtual DbSet<phone_type> phone_type { get; set; }
         public virtual DbSet<role> role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

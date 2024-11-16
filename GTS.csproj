@@ -78,6 +78,7 @@
     <Compile Include="AuxClasses\ate_type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AuxClasses\BoolConverter.cs" />
     <Compile Include="AuxClasses\category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -104,6 +105,9 @@
     <Compile Include="AuxClasses\phone_number.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AuxClasses\phone_number_customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="AuxClasses\phone_type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -120,7 +124,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\General\WindowAddCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\General\WindowAddPhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\General\WindowEditFee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\General\WindowFee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\General\WindowGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageAddATS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAddCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAddPhone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +164,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageAdminPhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageATS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageChangeATS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageEditCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageEditPhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,10 +192,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PagePhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\General\WindowAddCustomer.xaml.cs">
+      <DependentUpon>WindowAddCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\WindowAddPhone.xaml.cs">
+      <DependentUpon>WindowAddPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\WindowEditFee.xaml.cs">
+      <DependentUpon>WindowEditFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\WindowFee.xaml.cs">
+      <DependentUpon>WindowFee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\WindowGeneral.xaml.cs">
+      <DependentUpon>WindowGeneral.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageAddATS.xaml.cs">
       <DependentUpon>PageAddATS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAddCustomer.xaml.cs">
+      <DependentUpon>PageAddCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAddPhone.xaml.cs">
+      <DependentUpon>PageAddPhone.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageAdminATS.xaml.cs">
       <DependentUpon>PageAdminATS.xaml</DependentUpon>
@@ -151,11 +228,29 @@
     <Compile Include="Pages\PageAdminList.xaml.cs">
       <DependentUpon>PageAdminList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAdminPhone.xaml.cs">
+      <DependentUpon>PageAdminPhone.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageATS.xaml.cs">
       <DependentUpon>PageATS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageChangeATS.xaml.cs">
+      <DependentUpon>PageChangeATS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageEditCustomer.xaml.cs">
+      <DependentUpon>PageEditCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageEditPhone.xaml.cs">
+      <DependentUpon>PageEditPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageList.xaml.cs">
+      <DependentUpon>PageList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageLogin.xaml.cs">
       <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePhone.xaml.cs">
+      <DependentUpon>PagePhone.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
