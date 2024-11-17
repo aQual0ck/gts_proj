@@ -27,12 +27,14 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Количество абонентов:" Width="150"/>
                 <TextBox Name="txbCustomers" Width="150" Margin="5, 5, 0, 5"
-                         Text="{Binding number_of_customers}"/>
+                         Text="{Binding number_of_customers}"
+                         PreviewTextInput="txbCustomers_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Количество номеров:" Width="150"/>
                 <TextBox Name="txbPhoneNumbers" Width="150" Margin="5, 5, 0, 5"
-                         Text="{Binding phone_number_qty}"/>
+                         Text="{Binding phone_number_qty}"
+                         PreviewTextInput="txbPhoneNumbers_PreviewTextInput"/>
             </StackPanel>
             <Button Name="btnSave" Content="Сохранить" Click="btnSave_Click" 
                     Style="{StaticResource btnSave}">

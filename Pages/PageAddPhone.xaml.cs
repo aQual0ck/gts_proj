@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +25,11 @@ namespace GTS.Pages
         private int _ate_id;
         private string _page_name;
         private AuxClasses.phone_number phone;
+        private static readonly Regex _regex = new Regex("^[0-9+\\-()\\s]+$");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
         public PageAddPhone(int chosen_ate_id, string page_name)
         {
             InitializeComponent();
@@ -55,6 +61,11 @@ namespace GTS.Pages
             };
             AuxClasses.DBClass.entObj.phone_number.Add(phone);
             AuxClasses.DBClass.entObj.SaveChanges();
+        }
+
+        private void txbNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = IsTextAllowed(e.Text);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,7 +24,17 @@ namespace GTS.Pages
     {
         private int _ate_id;
         private string _page_name;
-        private AuxClasses.customer customer;
+        private AuxClasses.customer customer; 
+        private static readonly Regex _regex = new Regex("[^0-9]+");
+        private static readonly Regex _regexText = new Regex("[а-яА-ЯёЁ]+");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
+        private static bool IsNumberAllowed(string text)
+        {
+            return !_regexText.IsMatch(text);
+        }
         public PageAddCustomer(int chosen_ate_id, string page_name)
         {
             InitializeComponent();
@@ -66,6 +77,16 @@ namespace GTS.Pages
                 AuxClasses.FrameClass.frmObj.Navigate(new PageAdminList(_ate_id));
             else
                 AuxClasses.FrameClass.frmObj.Navigate(new PageList(_ate_id));
+        }
+
+        private void txbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = IsNumberAllowed(e.Text);
+        }
+
+        private void txbAge_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

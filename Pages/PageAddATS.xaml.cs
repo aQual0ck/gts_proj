@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace GTS.Pages
 {
@@ -22,6 +23,11 @@ namespace GTS.Pages
     public partial class PageAddATS : Page
     {
         private AuxClasses.ate a;
+        private static readonly Regex _regex = new Regex("[^0-9]+");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
         public PageAddATS()
         {
             InitializeComponent();
@@ -48,6 +54,16 @@ namespace GTS.Pages
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             AuxClasses.FrameClass.frmObj.Navigate(new PageAdminATS());
+        }
+
+        private void txbCustomers_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+
+        private void txbPhoneNumbers_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

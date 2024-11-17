@@ -22,7 +22,8 @@
                     Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Имя абонента:" Width="150"/>
-                <TextBox Name="txbName" Width="150" Margin="5, 5, 0, 5"/>
+                <TextBox Name="txbName" Width="150" Margin="5, 5, 0, 5"
+                         PreviewTextInput="txbName_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Пол:" Width="150"/>
@@ -33,7 +34,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Возраст:" Width="150"/>
-                <TextBox Name="txbAge" Width="150" Margin="5, 5, 0, 5"/>
+                <TextBox Name="txbAge" Width="150" Margin="5, 5, 0, 5"
+                         PreviewTextInput="txbAge_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Тип телефона:" Width="150"/>

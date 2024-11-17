@@ -23,7 +23,8 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Номер:" Width="150"/>
                 <TextBox Name="txbNumber" Width="150" Margin="5, 5, 0, 5"
-                         Text="{Binding full_number}"/>
+                         Text="{Binding full_number}"
+                         PreviewTextInput="txbNumber_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Адрес:" Width="150"/>

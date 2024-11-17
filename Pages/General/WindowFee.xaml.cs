@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,11 @@ namespace GTS.Pages.General
     public partial class WindowFee : Window
     {
         private phone_number_customer _pnc;
+        private static readonly Regex _regex = new Regex("[^0-9]+");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
         public WindowFee(phone_number_customer pnc)
         {
             InitializeComponent();
@@ -35,6 +41,11 @@ namespace GTS.Pages.General
 
             Window windowFee = Window.GetWindow(this);
             windowFee.Close();
+        }
+
+        private void txbFee_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

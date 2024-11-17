@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +27,16 @@ namespace GTS.Pages
         private AuxClasses.category cat;
         private string _page_name;
         private int _ate_id;
+        private static readonly Regex _regex = new Regex("[^0-9]+");
+        private static readonly Regex _regexText = new Regex("[а-яА-ЯёЁ]+");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
+        private static bool IsNumberAllowed(string text)
+        {
+            return !_regexText.IsMatch(text);
+        }
         public PageEditCustomer(object item, string page_name)
         {
             InitializeComponent();
@@ -95,6 +106,16 @@ namespace GTS.Pages
             customer.has_intercity = intercity;
 
             AuxClasses.DBClass.entObj.SaveChanges();
+        }
+
+        private void txbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = IsNumberAllowed(e.Text);
+        }
+
+        private void txbAge_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
         }
     }
 }

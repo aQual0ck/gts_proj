@@ -11,7 +11,8 @@
         <StackPanel VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Абонентская плата" />
-                <TextBox Name="txbFee" Width="150" Margin="5" Text="{Binding fee}"/>
+                <TextBox Name="txbFee" Width="150" Margin="5" Text="{Binding fee}"
+                         PreviewTextInput="txbFee_PreviewTextInput"/>
             </StackPanel>
             <Button Name="btnSave" Style="{StaticResource btnSave}" 
                     Content="Сохранить" Click="btnSave_Click">
