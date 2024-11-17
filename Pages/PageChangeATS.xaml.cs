@@ -59,6 +59,8 @@ namespace GTS.Pages
             ate.number_of_customers = Convert.ToInt32(txbCustomers.Text);
             ate.phone_number_qty = Convert.ToInt32(txbPhoneNumbers.Text);
             AuxClasses.DBClass.entObj.SaveChanges();
+
+            MessageBox.Show("Сохранено");
         }
 
         private void txbCustomers_PreviewTextInput(object sender, TextCompositionEventArgs e)

@@ -69,6 +69,8 @@ namespace GTS.Pages
             };
             AuxClasses.DBClass.entObj.customer.Add(customer);
             AuxClasses.DBClass.entObj.SaveChanges();
+
+            MessageBox.Show("Добавлено");
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

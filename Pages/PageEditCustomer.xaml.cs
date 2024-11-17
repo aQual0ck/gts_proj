@@ -106,6 +106,8 @@ namespace GTS.Pages
             customer.has_intercity = intercity;
 
             AuxClasses.DBClass.entObj.SaveChanges();
+
+            MessageBox.Show("Сохранено");
         }
 
         private void txbName_PreviewTextInput(object sender, TextCompositionEventArgs e)

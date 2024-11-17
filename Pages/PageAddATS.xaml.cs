@@ -48,6 +48,7 @@ namespace GTS.Pages
             };
             AuxClasses.DBClass.entObj.ate.Add(a);
             AuxClasses.DBClass.entObj.SaveChanges();
+
             MessageBox.Show("Добавлено!");
         }
 

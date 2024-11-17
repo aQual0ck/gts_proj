@@ -68,6 +68,8 @@ namespace GTS.Pages
             phone.ate_id = _ate_id;
 
             AuxClasses.DBClass.entObj.SaveChanges();
+
+            MessageBox.Show("Сохранено");
         }
 
         private void txbNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)

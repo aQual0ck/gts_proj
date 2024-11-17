@@ -40,6 +40,8 @@ namespace GTS.Pages.General
 
             AuxClasses.DBClass.entObj.SaveChanges();
 
+            MessageBox.Show("Сохранено");
+
             Window windowFee = Window.GetWindow(this);
             windowFee.Close();
         }

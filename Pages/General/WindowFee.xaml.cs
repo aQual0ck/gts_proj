@@ -39,6 +39,8 @@ namespace GTS.Pages.General
             DBClass.entObj.phone_number_customer.Add(_pnc);
             DBClass.entObj.SaveChanges();
 
+            MessageBox.Show("Сохранено");
+
             Window windowFee = Window.GetWindow(this);
             windowFee.Close();
         }

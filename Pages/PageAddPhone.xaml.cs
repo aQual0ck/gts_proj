@@ -61,6 +61,8 @@ namespace GTS.Pages
             };
             AuxClasses.DBClass.entObj.phone_number.Add(phone);
             AuxClasses.DBClass.entObj.SaveChanges();
+
+            MessageBox.Show("Добавлено");
         }
 
         private void txbNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
