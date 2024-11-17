@@ -33,20 +33,12 @@ namespace GTS.Pages
             dgrCustomer.ItemsSource = AuxClasses.DBClass.entObj.customer.Where(x => x.ate_id == chosen_ate_id).ToList();
             _need_id = chosen_ate_id;
 
-            cmbFilterPT.SelectedValuePath = "phone_type_name";
-            cmbFilterPT.DisplayMemberPath = "phone_type_name";
-            var pt = AuxClasses.DBClass.entObj.phone_type.ToList();
-            pt.Insert(0, new phone_type { id = 0, phone_type_name = "Все типы телефона" });
-            cmbFilterPT.ItemsSource = pt;
-
-
             cmbFilterCat.SelectedValuePath = "category_name";
             cmbFilterCat.DisplayMemberPath = "category_name";
             var cat = AuxClasses.DBClass.entObj.category.ToList();
             cat.Insert(0, new category { id = 0, category_name = "Все категории" });
             cmbFilterCat.ItemsSource = cat;
 
-            cmbFilterPT.SelectedIndex = 0;
             cmbFilterCat.SelectedIndex = 0;
 
             if (string.IsNullOrEmpty(txbSearch.Text))
@@ -200,27 +192,15 @@ namespace GTS.Pages
 
         private void cmbFilterCat_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbFilterPT.SelectedItem is null)
-            {
-                cmbFilterPT.SelectedIndex = 0;
-            }
-
             ApplyFilters();
         }
 
         private void ApplyFilters()
         {
-            // Extract ComboBox selections
-            int ptid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbFilterPT.SelectedItem)["id"].GetValue(cmbFilterPT.SelectedItem));
             int catid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbFilterCat.SelectedItem)["id"].GetValue(cmbFilterCat.SelectedItem));
             string searchText = txbSearch.Text.ToLower();
 
-            // Start with the base query
             var query = DBClass.entObj.customer.AsQueryable();
-
-            // Apply filters based on the controls' states
-            if (ptid != 0)
-                query = query.Where(x => x.phone_type_id == ptid);
 
             if (catid != 0)
                 query = query.Where(x => x.category_id == catid);
@@ -237,11 +217,16 @@ namespace GTS.Pages
             if (txbSearch.Text != "Введите имя для поиска" && !string.IsNullOrEmpty(txbSearch.Text))
                 query = query.Where(x => x.name.ToLower().Contains(searchText));
 
-            // Always filter by `ate_id`
             query = query.Where(x => x.ate_id == _need_id);
 
-            // Assign filtered data to the DataGrid
             dgrCustomer.ItemsSource = query.ToList();
+        }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            int current_customers = DBClass.entObj.customer.Where(x => x.ate_id == _need_id).Count();
+            int current_phones = DBClass.entObj.phone_number.Where(x => x.ate_id == _need_id).Count();
+            MessageBox.Show($"Кол-во абонентов: {current_customers}\nКол-во телефонов: {current_phones}");
         }
     }
 }

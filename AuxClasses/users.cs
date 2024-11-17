@@ -17,7 +17,7 @@ namespace GTS.AuxClasses
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public Nullable<int> role_id { get; set; }
+        public int role_id { get; set; }
     
         public virtual role role { get; set; }
     }

@@ -24,13 +24,11 @@
                 <MenuItem Name="menuGeneral" Header="Общее" Click="menuGeneral_Click"/>
             </MenuItem>
             <MenuItem Name="menuBack" Header="Выбор АТС" Click="menuBack_Click"/>
-            <MenuItem Name="menuExit" Header="Выйти" Click="menuExit_Click"/>
+            <MenuItem Name="menuExit" Header="Выход" Click="menuExit_Click"/>
         </Menu>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <TextBox Width="200" Height="25" Margin="5" Name="txbSearch" 
                      TextChanged="txbSearch_TextChanged"/>
-            <ComboBox Name="cmbFilterPT" Width="150" Height="25" 
-                      SelectionChanged="cmbFilterPT_SelectionChanged"/>
             <ComboBox Name="cmbFilterCat" Width="150" Height="25" Margin="5"
                       SelectionChanged="cmbFilterCat_SelectionChanged"/>
             <StackPanel Margin="0, 2.5, 0, 0">
@@ -44,6 +42,8 @@
                           VerticalAlignment="Center" Name="cbDI" 
                           Checked="cbDI_Checked" Unchecked="cbDI_Unchecked"/>
             </StackPanel>
+            <Button Content="Отчет" Width="75" Height="25" Margin="50, 0" Name="btnReport"
+                    Click="btnReport_Click"/>
         </StackPanel>
         <DataGrid Name="dgrCustomer" Grid.Row="2" AutoGenerateColumns="False" 
                   IsReadOnly="True">
@@ -51,17 +51,6 @@
                 <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="*"/>
                 <DataGridTextColumn Header="Пол" Binding="{Binding gender}" Width="*"/>
                 <DataGridTextColumn Header="Возраст" Binding="{Binding age}" Width="*"/>
-                <DataGridTemplateColumn Header="Тип телефона" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock DataContext="{Binding Path=phone_type}">
-                                <TextBlock.Text>
-                                    <Binding Path="phone_type_name"/>
-                                </TextBlock.Text>
-                            </TextBlock>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Категория" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

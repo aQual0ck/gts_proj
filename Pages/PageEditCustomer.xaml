@@ -40,10 +40,6 @@
                          PreviewTextInput="txbAge_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Тип телефона:" Width="150"/>
-                <ComboBox Name="cmbPhoneType" Width="150" Height="20" Margin="5, 5, 0, 5"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Категория:" Width="150"/>
                 <ComboBox Name="cmbCategory" Width="150" Height="20" Margin="5, 5, 0, 5"/>
             </StackPanel>

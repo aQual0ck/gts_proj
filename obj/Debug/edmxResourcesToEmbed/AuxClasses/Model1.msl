@@ -30,12 +30,10 @@
     <EntitySetMapping Name="customer">
       <EntityTypeMapping TypeName="gtsModel.customer">
         <MappingFragment StoreEntitySet="customer">
-          <ScalarProperty Name="phone_number_id" ColumnName="phone_number_id" />
           <ScalarProperty Name="has_intercity" ColumnName="has_intercity" />
           <ScalarProperty Name="has_debt" ColumnName="has_debt" />
           <ScalarProperty Name="category_id" ColumnName="category_id" />
           <ScalarProperty Name="ate_id" ColumnName="ate_id" />
-          <ScalarProperty Name="phone_type_id" ColumnName="phone_type_id" />
           <ScalarProperty Name="age" ColumnName="age" />
           <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -46,7 +44,6 @@
     <EntitySetMapping Name="phone_number">
       <EntityTypeMapping TypeName="gtsModel.phone_number">
         <MappingFragment StoreEntitySet="phone_number">
-          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="ate_id" ColumnName="ate_id" />
           <ScalarProperty Name="phone_type_id" ColumnName="phone_type_id" />
           <ScalarProperty Name="address" ColumnName="address" />

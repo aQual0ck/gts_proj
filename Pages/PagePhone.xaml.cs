@@ -146,5 +146,12 @@ namespace GTS.Pages
                 txbSearch.Foreground = Brushes.Gray;
             }
         }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            int current_customers = DBClass.entObj.customer.Where(x => x.ate_id == _need_id).Count();
+            int current_phones = DBClass.entObj.phone_number.Where(x => x.ate_id == _need_id).Count();
+            MessageBox.Show($"Кол-во абонентов: {current_customers}\nКол-во телефонов: {current_phones}");
+        }
     }
 }

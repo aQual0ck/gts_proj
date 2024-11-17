@@ -23,9 +23,8 @@ namespace GTS.AuxClasses
         public int id { get; set; }
         public string full_number { get; set; }
         public string address { get; set; }
-        public Nullable<int> phone_type_id { get; set; }
-        public Nullable<int> ate_id { get; set; }
-        public Nullable<int> customer_id { get; set; }
+        public int phone_type_id { get; set; }
+        public int ate_id { get; set; }
     
         public virtual ate ate { get; set; }
         public virtual phone_type phone_type { get; set; }

@@ -23,8 +23,8 @@ namespace GTS.AuxClasses
     
         public int id { get; set; }
         public int ate_type_id { get; set; }
-        public Nullable<int> number_of_customers { get; set; }
-        public Nullable<int> phone_number_qty { get; set; }
+        public int number_of_customers { get; set; }
+        public int phone_number_qty { get; set; }
     
         public virtual ate_type ate_type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

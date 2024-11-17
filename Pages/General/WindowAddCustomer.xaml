@@ -18,17 +18,6 @@
                 <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="*"/>
                 <DataGridTextColumn Header="Пол" Binding="{Binding gender}" Width="*"/>
                 <DataGridTextColumn Header="Возраст" Binding="{Binding age}" Width="*"/>
-                <DataGridTemplateColumn Header="Тип телефона" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock DataContext="{Binding Path=phone_type}">
-                                <TextBlock.Text>
-                                    <Binding Path="phone_type_name"/>
-                                </TextBlock.Text>
-                            </TextBlock>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Категория" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

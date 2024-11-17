@@ -47,9 +47,7 @@ namespace GTS.Pages
             var id = TypeDescriptor.GetProperties(DataContext)["id"].GetValue(DataContext);
             customer = AuxClasses.DBClass.entObj.customer.FirstOrDefault(x => x.id == (int)id);
 
-            var pt_id = TypeDescriptor.GetProperties(DataContext)["phone_type_id"].GetValue(DataContext);
             var cat_id = TypeDescriptor.GetProperties(DataContext)["category_id"].GetValue(DataContext);
-            pt = AuxClasses.DBClass.entObj.phone_type.FirstOrDefault(x => x.id == (int)pt_id);
             cat = AuxClasses.DBClass.entObj.category.FirstOrDefault(x => x.id == (int)cat_id);
 
             var gender_name = TypeDescriptor.GetProperties(DataContext)["gender"].GetValue(DataContext);
@@ -70,11 +68,6 @@ namespace GTS.Pages
             else
                 cmbIntercity.SelectedIndex = 1;
 
-            cmbPhoneType.SelectedValuePath = "phone_type_name";
-            cmbPhoneType.DisplayMemberPath = "phone_type_name";
-            cmbPhoneType.ItemsSource = AuxClasses.DBClass.entObj.phone_type.ToList();
-            cmbPhoneType.SelectedValue = pt.phone_type_name;
-
             cmbCategory.SelectedValuePath = "category_name";
             cmbCategory.DisplayMemberPath = "category_name";
             cmbCategory.ItemsSource = AuxClasses.DBClass.entObj.category.ToList();
@@ -91,7 +84,6 @@ namespace GTS.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            int ptid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbPhoneType.SelectionBoxItem)["id"].GetValue(cmbPhoneType.SelectionBoxItem));
             int catid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbCategory.SelectionBoxItem)["id"].GetValue(cmbCategory.SelectionBoxItem));
             bool debt = (cmbDebt.Text == "Нет") ? false : true;
             bool intercity = (cmbIntercity.Text == "Нет") ? false : true;
@@ -99,7 +91,6 @@ namespace GTS.Pages
             customer.name = txbName.Text;
             customer.gender = Convert.ToString(cmbGender.Text[0]);
             customer.age = Convert.ToInt32(txbAge.Text);
-            customer.phone_type_id = ptid;
             customer.ate_id = _ate_id;
             customer.category_id = catid;
             customer.has_debt = debt;

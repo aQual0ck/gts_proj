@@ -24,13 +24,15 @@
                       Click="menuChange_Click"/>
             <MenuItem Name="menuDelete" Header="Удалить АТС" Click="menuDelete_Click"/>
             <MenuItem Name="menuBack" Header="Выбор АТС" Click="menuBack_Click"/>
-            <MenuItem Name="menuExit" Header="Выйти" Click="menuExit_Click"/>
+            <MenuItem Name="menuExit" Header="Выход" Click="menuExit_Click"/>
         </Menu>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <TextBox Width="200" Height="25" Margin="5" Name="txbSearch" 
                      TextChanged="txbSearch_TextChanged"/>
             <ComboBox Name="cmbFilterPT" Width="150" Height="25" 
                       SelectionChanged="cmbFilterPT_SelectionChanged"/>
+            <Button Content="Отчет" Width="75" Height="25" Margin="50, 0" Name="btnReport"
+                    Click="btnReport_Click"/>
         </StackPanel>
         <DataGrid Name="dgrPhone" Grid.Row="2" AutoGenerateColumns="False" 
                   IsReadOnly="True">

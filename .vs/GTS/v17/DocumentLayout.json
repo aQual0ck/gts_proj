@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\source\\gts_proj\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pagelist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pagelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 235,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PageList.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageList.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageList.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageList.xaml.cs",
+              "RelativeToolTip": "Pages\\PageList.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:23:59.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PageList.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageList.xaml",
+              "RelativeDocumentMoniker": "Pages\\PageList.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageList.xaml",
+              "RelativeToolTip": "Pages\\PageList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-17T20:23:55.091Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

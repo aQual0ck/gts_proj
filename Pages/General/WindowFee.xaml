@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GTS.Pages.General"
         mc:Ignorable="d"
-        Title="WindowFee" Height="200" Width="400" Background="#F6F6F6">
+        Title="Редактирование абонентской платы" Height="200" Width="400" Background="#F6F6F6">
     <Grid>
         <Rectangle Width="300" Height="100" Fill="White" Stroke="#666666"/>
         <StackPanel VerticalAlignment="Center">

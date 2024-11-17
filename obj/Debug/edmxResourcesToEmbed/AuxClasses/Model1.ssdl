@@ -6,37 +6,35 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ate_type_id" Type="int" Nullable="false" />
-    <Property Name="number_of_customers" Type="int" />
-    <Property Name="phone_number_qty" Type="int" />
+    <Property Name="number_of_customers" Type="int" Nullable="false" />
+    <Property Name="phone_number_qty" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ate_type">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ate_type_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ate_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="category">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="category_name" Type="varchar" MaxLength="50" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="gender" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="1" Nullable="false" />
     <Property Name="age" Type="int" Nullable="false" />
-    <Property Name="phone_type_id" Type="int" />
-    <Property Name="ate_id" Type="int" />
-    <Property Name="category_id" Type="int" />
-    <Property Name="has_debt" Type="bit" />
-    <Property Name="has_intercity" Type="bit" />
-    <Property Name="phone_number_id" Type="int" />
+    <Property Name="ate_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="has_debt" Type="bit" Nullable="false" />
+    <Property Name="has_intercity" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="phone_number">
     <Key>
@@ -44,10 +42,9 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="full_number" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="address" Type="nvarchar" MaxLength="100" />
-    <Property Name="phone_type_id" Type="int" />
-    <Property Name="ate_id" Type="int" />
-    <Property Name="customer_id" Type="int" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone_type_id" Type="int" Nullable="false" />
+    <Property Name="ate_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="phone_number_customer">
     <Key>
@@ -56,21 +53,21 @@
     </Key>
     <Property Name="phone_number_id" Type="int" Nullable="false" />
     <Property Name="customer_id" Type="int" Nullable="false" />
-    <Property Name="fee" Type="int" />
+    <Property Name="fee" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="phone_type">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="phone_type_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="role">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="role_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -89,9 +86,9 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="16" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="16" Nullable="false" />
-    <Property Name="role_id" Type="int" />
+    <Property Name="role_id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__ate__ate_type_id__70DDC3D8">
+  <Association Name="FK__ate__ate_type_id__2BFE89A6">
     <End Role="ate_type" Type="Self.ate_type" Multiplicity="1" />
     <End Role="ate" Type="Self.ate" Multiplicity="*" />
     <ReferentialConstraint>
@@ -103,8 +100,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__customer__ate_id__787EE5A0">
-    <End Role="ate" Type="Self.ate" Multiplicity="0..1" />
+  <Association Name="FK__customer__ate_id__32AB8735">
+    <End Role="ate" Type="Self.ate" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ate">
@@ -115,8 +112,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__customer__catego__797309D9">
-    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+  <Association Name="FK__customer__catego__339FAB6E">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="category">
@@ -127,20 +124,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__customer__phone___778AC167">
-    <End Role="phone_type" Type="Self.phone_type" Multiplicity="0..1" />
-    <End Role="customer" Type="Self.customer" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="phone_type">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="customer">
-        <PropertyRef Name="phone_type_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__phone_num__ate_i__18EBB532">
-    <End Role="ate" Type="Self.ate" Multiplicity="0..1" />
+  <Association Name="FK__phone_num__ate_i__37703C52">
+    <End Role="ate" Type="Self.ate" Multiplicity="1" />
     <End Role="phone_number" Type="Self.phone_number" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ate">
@@ -151,7 +136,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phone_num__custo__2180FB33">
+  <Association Name="FK__phone_num__custo__3B40CD36">
     <End Role="customer" Type="Self.customer" Multiplicity="1" />
     <End Role="phone_number_customer" Type="Self.phone_number_customer" Multiplicity="*" />
     <ReferentialConstraint>
@@ -163,8 +148,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phone_num__phone__17F790F9">
-    <End Role="phone_type" Type="Self.phone_type" Multiplicity="0..1" />
+  <Association Name="FK__phone_num__phone__367C1819">
+    <End Role="phone_type" Type="Self.phone_type" Multiplicity="1" />
     <End Role="phone_number" Type="Self.phone_number" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="phone_type">
@@ -175,7 +160,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phone_num__phone__208CD6FA">
+  <Association Name="FK__phone_num__phone__3A4CA8FD">
     <End Role="phone_number" Type="Self.phone_number" Multiplicity="1" />
     <End Role="phone_number_customer" Type="Self.phone_number_customer" Multiplicity="*" />
     <ReferentialConstraint>
@@ -187,8 +172,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__role_id__398D8EEE">
-    <End Role="role" Type="Self.role" Multiplicity="0..1" />
+  <Association Name="FK__users__role_id__2645B050">
+    <End Role="role" Type="Self.role" Multiplicity="1" />
     <End Role="users" Type="Self.users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="role">
@@ -210,39 +195,35 @@
     <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ate__ate_type_id__70DDC3D8" Association="Self.FK__ate__ate_type_id__70DDC3D8">
+    <AssociationSet Name="FK__ate__ate_type_id__2BFE89A6" Association="Self.FK__ate__ate_type_id__2BFE89A6">
       <End Role="ate_type" EntitySet="ate_type" />
       <End Role="ate" EntitySet="ate" />
     </AssociationSet>
-    <AssociationSet Name="FK__customer__ate_id__787EE5A0" Association="Self.FK__customer__ate_id__787EE5A0">
+    <AssociationSet Name="FK__customer__ate_id__32AB8735" Association="Self.FK__customer__ate_id__32AB8735">
       <End Role="ate" EntitySet="ate" />
       <End Role="customer" EntitySet="customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__customer__catego__797309D9" Association="Self.FK__customer__catego__797309D9">
+    <AssociationSet Name="FK__customer__catego__339FAB6E" Association="Self.FK__customer__catego__339FAB6E">
       <End Role="category" EntitySet="category" />
       <End Role="customer" EntitySet="customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__customer__phone___778AC167" Association="Self.FK__customer__phone___778AC167">
-      <End Role="phone_type" EntitySet="phone_type" />
-      <End Role="customer" EntitySet="customer" />
-    </AssociationSet>
-    <AssociationSet Name="FK__phone_num__ate_i__18EBB532" Association="Self.FK__phone_num__ate_i__18EBB532">
+    <AssociationSet Name="FK__phone_num__ate_i__37703C52" Association="Self.FK__phone_num__ate_i__37703C52">
       <End Role="ate" EntitySet="ate" />
       <End Role="phone_number" EntitySet="phone_number" />
     </AssociationSet>
-    <AssociationSet Name="FK__phone_num__custo__2180FB33" Association="Self.FK__phone_num__custo__2180FB33">
+    <AssociationSet Name="FK__phone_num__custo__3B40CD36" Association="Self.FK__phone_num__custo__3B40CD36">
       <End Role="customer" EntitySet="customer" />
       <End Role="phone_number_customer" EntitySet="phone_number_customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__phone_num__phone__17F790F9" Association="Self.FK__phone_num__phone__17F790F9">
+    <AssociationSet Name="FK__phone_num__phone__367C1819" Association="Self.FK__phone_num__phone__367C1819">
       <End Role="phone_type" EntitySet="phone_type" />
       <End Role="phone_number" EntitySet="phone_number" />
     </AssociationSet>
-    <AssociationSet Name="FK__phone_num__phone__208CD6FA" Association="Self.FK__phone_num__phone__208CD6FA">
+    <AssociationSet Name="FK__phone_num__phone__3A4CA8FD" Association="Self.FK__phone_num__phone__3A4CA8FD">
       <End Role="phone_number" EntitySet="phone_number" />
       <End Role="phone_number_customer" EntitySet="phone_number_customer" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__role_id__398D8EEE" Association="Self.FK__users__role_id__398D8EEE">
+    <AssociationSet Name="FK__users__role_id__2645B050" Association="Self.FK__users__role_id__2645B050">
       <End Role="role" EntitySet="role" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>

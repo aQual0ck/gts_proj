@@ -16,7 +16,7 @@ namespace GTS.AuxClasses
     {
         public int phone_number_id { get; set; }
         public int customer_id { get; set; }
-        public Nullable<int> fee { get; set; }
+        public int fee { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual phone_number phone_number { get; set; }

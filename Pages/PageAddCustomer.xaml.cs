@@ -41,10 +41,6 @@ namespace GTS.Pages
             _ate_id = chosen_ate_id;
             _page_name = page_name;
 
-            cmbPhoneType.SelectedValuePath = "phone_type_name";
-            cmbPhoneType.DisplayMemberPath = "phone_type_name";
-            cmbPhoneType.ItemsSource = AuxClasses.DBClass.entObj.phone_type.ToList();
-
             cmbCategory.SelectedValuePath = "category_name";
             cmbCategory.DisplayMemberPath = "category_name";
             cmbCategory.ItemsSource = AuxClasses.DBClass.entObj.category.ToList();
@@ -54,14 +50,12 @@ namespace GTS.Pages
         {
             bool debt = (cmbDebt.Text == "Нет") ? false : true;
             bool intercity = (cmbIntercity.Text == "Нет") ? false : true;
-            int ptid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbPhoneType.SelectionBoxItem)["id"].GetValue(cmbPhoneType.SelectionBoxItem));
             int catid = Convert.ToInt32(TypeDescriptor.GetProperties(cmbCategory.SelectionBoxItem)["id"].GetValue(cmbCategory.SelectionBoxItem));
             customer = new AuxClasses.customer()
             { 
                 name = txbName.Text,
                 gender = Convert.ToString(cmbGender.Text[0]),
                 age = Convert.ToInt32(txbAge.Text),
-                phone_type_id = ptid,
                 ate_id = _ate_id,
                 category_id = catid,
                 has_debt = debt,
