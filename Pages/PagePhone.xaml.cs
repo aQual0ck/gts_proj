@@ -89,7 +89,7 @@ namespace GTS.Pages
             {
                 AuxClasses.DBClass.entObj.phone_number.Remove(phone);
                 DBClass.entObj.SaveChanges();
-                dgrPhone.ItemsSource = DBClass.entObj.phone_number.ToList();
+                ApplyFilters();
             }
         }
 
