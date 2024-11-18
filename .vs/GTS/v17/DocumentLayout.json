@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageadminlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageadminlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageaddcustomer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageaddcustomer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageaddcustomer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageaddcustomer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|F:\\source\\gts_proj\\pages\\pagelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pagelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -18,8 +30,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PageAddCustomer.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAddCustomer.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageAddCustomer.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAddCustomer.xaml.cs",
+              "RelativeToolTip": "Pages\\PageAddCustomer.xaml.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T14:01:24.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PageAddCustomer.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAddCustomer.xaml",
+              "RelativeDocumentMoniker": "Pages\\PageAddCustomer.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAddCustomer.xaml",
+              "RelativeToolTip": "Pages\\PageAddCustomer.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-18T14:01:22.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PageAdminList.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAdminList.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageAdminList.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAdminList.xaml.cs",
+              "RelativeToolTip": "Pages\\PageAdminList.xaml.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAIwNkAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:55:11.421Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,21 +78,22 @@
               "RelativeDocumentMoniker": "Pages\\PageList.xaml.cs",
               "ToolTip": "F:\\source\\gts_proj\\Pages\\PageList.xaml.cs",
               "RelativeToolTip": "Pages\\PageList.xaml.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAAAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAADwv0kAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T20:23:59.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PageList.xaml",
               "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageList.xaml",
               "RelativeDocumentMoniker": "Pages\\PageList.xaml",
               "ToolTip": "F:\\source\\gts_proj\\Pages\\PageList.xaml",
               "RelativeToolTip": "Pages\\PageList.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-17T20:23:55.091Z"
+              "WhenOpened": "2024-11-17T20:23:55.091Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -215,7 +215,7 @@ namespace GTS.Pages
                 query = query.Where(x => x.has_debt == false && x.has_intercity == false);
 
             if (txbSearch.Text != "Введите имя для поиска" && !string.IsNullOrEmpty(txbSearch.Text))
-                query = query.Where(x => x.name.ToLower().Contains(searchText));
+                query = query.Where(x => x.name.ToLower().Contains(searchText) && x.ate_id == _need_id);
 
             query = query.Where(x => x.ate_id == _need_id);
 

@@ -78,7 +78,7 @@ namespace GTS.Pages
             {
                 AuxClasses.DBClass.entObj.customer.Remove(customer);
                 DBClass.entObj.SaveChanges();
-                dgrCustomer.ItemsSource = DBClass.entObj.customer.ToList();
+                ApplyFilters();
             }
         }
 
@@ -168,6 +168,7 @@ namespace GTS.Pages
 
             if (cbDI.IsChecked == true)
                 query = query.Where(x => x.has_debt == false && x.has_intercity == false);
+
             if (txbSearch.Text != "Введите имя для поиска" && !string.IsNullOrEmpty(txbSearch.Text))
                 query = query.Where(x => x.name.ToLower().Contains(searchText) && x.ate_id == _need_id);
 
