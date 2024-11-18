@@ -24,6 +24,8 @@
                 <MenuItem Name="menuPhone" Header="Телефоны" Click="menuPhone_Click"/>
                 <MenuItem Name="menuGeneral" Header="Общее" Click="menuGeneral_Click"/>
             </MenuItem>
+            <MenuItem Name="menuReportCustomers" Header="Отчет" 
+                      Click="menuReportCustomers_Click"/>
             <MenuItem Name="menuChange" Header="Изменить АТС" 
                       Click="menuChange_Click"/>
             <MenuItem Name="menuDelete" Header="Удалить АТС" Click="menuDelete_Click"/>
@@ -45,7 +47,7 @@
                           VerticalAlignment="Center" Name="cbDI" 
                           Checked="cbDI_Checked" Unchecked="cbDI_Unchecked"/>
             </StackPanel>
-            <Button Content="Отчет" Width="75" Height="25" Margin="50, 0" Name="btnReport"
+            <Button Content="Кол-во абонентов/телефонов" Width="170" Height="25" Margin="50, 0" Name="btnReport"
                     Click="btnReport_Click"/>
         </StackPanel>
         <DataGrid Name="dgrCustomer" Grid.Row="2" AutoGenerateColumns="False" 
@@ -57,7 +59,8 @@
                 <DataGridTemplateColumn Header="Категория" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock DataContext="{Binding Path=category}">
+                            <TextBlock DataContext="{Binding Path=category}" 
+                                       Name="tbCategory">
                                 <TextBlock.Text>
                                     <Binding Path="category_name"/>
                                 </TextBlock.Text>

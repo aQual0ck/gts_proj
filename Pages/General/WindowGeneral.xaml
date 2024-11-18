@@ -13,9 +13,11 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" VerticalAlignment="Center" Name="menuGeneral">
             <MenuItem Header="Закрыть" Click="MenuItem_Click"/>
+            <MenuItem Name="menuReport" Header="Отчет" 
+                      Click="menuReport_Click"/>
         </Menu>
         <DataGrid Name="dgrGeneral" Grid.Row="1" AutoGenerateColumns="False" 
-  IsReadOnly="True">
+                  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Номер телефона" Width="*">
                     <DataGridTemplateColumn.CellTemplate>

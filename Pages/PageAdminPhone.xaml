@@ -20,6 +20,8 @@
                 <MenuItem Name="menuCustomer" Header="Абоненты" Click="menuCustomer_Click"/>
                 <MenuItem Name="menuGeneral" Header="Общее" Click="menuGeneral_Click"/>
             </MenuItem>
+            <MenuItem Name="menuReportPhones" Header="Отчет" 
+                      Click="menuReportPhones_Click"/>
             <MenuItem Name="menuChange" Header="Изменить АТС" 
                       Click="menuChange_Click"/>
             <MenuItem Name="menuDelete" Header="Удалить АТС" Click="menuDelete_Click"/>
@@ -31,8 +33,8 @@
                      TextChanged="txbSearch_TextChanged"/>
             <ComboBox Name="cmbFilterPT" Width="150" Height="25" 
                       SelectionChanged="cmbFilterPT_SelectionChanged"/>
-            <Button Content="Отчет" Width="75" Height="25" Margin="50, 0" Name="btnReport"
-                    Click="btnReport_Click"/>
+            <Button Content="Кол-во абонентов/телефонов" Width="170" Height="25" Margin="50, 0" Name="btnReport"
+        Click="btnReport_Click"/>
         </StackPanel>
         <DataGrid Name="dgrPhone" Grid.Row="2" AutoGenerateColumns="False" 
                   IsReadOnly="True">

@@ -1,14 +1,20 @@
 ﻿using GTS.AuxClasses;
+using iText.Layout;
+using iText.Kernel.Font;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,6 +28,7 @@ namespace GTS.Pages.General
     public partial class WindowGeneral : Window
     {
         private string _page_name;
+        private string _filepath;
         private phone_number_customer pnc;
         public WindowGeneral(object item, string page_name)
         {
@@ -129,6 +136,67 @@ namespace GTS.Pages.General
             else
             {
                 dgrGeneral.ItemsSource = AuxClasses.DBClass.entObj.phone_number_customer.ToList();
+            }
+        }
+
+        private void menuReport_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = "Отчет";
+            sfd.DefaultExt = ".pdf";
+
+            PdfFont font = PdfFontFactory.CreateFont($"{Directory.GetParent(Environment.CurrentDirectory).Parent.FullName}\\Assets\\arial.ttf", "Identity-H");
+
+            bool? result = sfd.ShowDialog();
+
+            if (result == true)
+            {
+                _filepath = sfd.FileName;
+
+                using (PdfWriter writer = new PdfWriter(_filepath))
+                {
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    {
+                        Document doc = new Document(pdf, PageSize.A4);
+                        doc.SetFont(font);
+                        Table table = new Table(dgrGeneral.Columns.Count - 1);
+
+                        foreach (var column in dgrGeneral.Columns)
+                        {
+                            if (column.Header.ToString() != "Опции")
+                                table.AddHeaderCell(new Cell().Add(new Paragraph(column.Header.ToString())));
+                        }
+
+                        foreach (var item in dgrGeneral.Items)
+                        {
+                            foreach (var column in dgrGeneral.Columns)
+                            {
+                                if (column.Header.ToString() != "Опции" && column.Header.ToString() == "Номер телефона")
+                                {
+                                    object cell = TypeDescriptor.GetProperties(item)["phone_number"].GetValue(item);
+                                    string cellValue = TypeDescriptor.GetProperties(cell)["full_number"].GetValue(cell).ToString();
+                                    table.AddCell(new Cell().Add(new Paragraph(cellValue)));
+                                }
+                                if (column.Header.ToString() != "Опции" && column.Header.ToString() == "Абонент")
+                                {
+                                    object cell = TypeDescriptor.GetProperties(item)["customer"].GetValue(item);
+                                    string cellValue = TypeDescriptor.GetProperties(cell)["name"].GetValue(cell).ToString();
+                                    table.AddCell(new Cell().Add(new Paragraph(cellValue)));
+                                }
+                                if (column.Header.ToString() != "Опции" && column.Header.ToString() != "Абонент" && column.Header.ToString() != "Номер телефона")
+                                {
+                                    var cellContent = TypeDescriptor.GetProperties(item)[$"{column.SortMemberPath}"].GetValue(item);
+                                    string cellValue = cellContent != null ? cellContent.ToString() : string.Empty;
+                                    table.AddCell(new Cell().Add(new Paragraph(cellValue)));
+                                }
+                            }
+                        }
+
+                        doc.Add(table);
+                        doc.Close();
+                    }
+                }
+                MessageBox.Show($"Отчет сохранен по данному пути: {_filepath}");
             }
         }
     }
