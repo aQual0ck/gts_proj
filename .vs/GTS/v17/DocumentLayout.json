@@ -1,12 +1,74 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\source\\gts_proj\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageadminats.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageadminats.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageadminats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageadminats.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|f:\\source\\gts_proj\\pages\\pageadminlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{687EF18F-A550-4A1F-91DA-B4FE80D6C7E9}|GTS.csproj|solutionrelative:pages\\pageadminlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 235,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PageAdminATS.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageAdminATS.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml.cs",
+              "RelativeToolTip": "Pages\\PageAdminATS.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T20:00:14.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PageAdminATS.xaml",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml",
+              "RelativeDocumentMoniker": "Pages\\PageAdminATS.xaml",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAdminATS.xaml",
+              "RelativeToolTip": "Pages\\PageAdminATS.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T20:00:12.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PageAdminList.xaml.cs",
+              "DocumentMoniker": "F:\\source\\gts_proj\\Pages\\PageAdminList.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PageAdminList.xaml.cs",
+              "ToolTip": "F:\\source\\gts_proj\\Pages\\PageAdminList.xaml.cs",
+              "RelativeToolTip": "Pages\\PageAdminList.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T20:00:04.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
